@@ -11,7 +11,11 @@ def generate_unique_code():
             break
     return code
 
+
 class Room(models.Model):
+    def __str__(self):
+        return self.code
+
     code = models.CharField(max_length=8, default=generate_unique_code, unique=True)
     host = models.CharField(max_length=50, unique=True)
     guest_can_pause = models.BooleanField(null=False, default=False)

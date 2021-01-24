@@ -53,13 +53,7 @@ export default class CreateRoomPage extends React.Component {
 
   render() {
     return (
-      <Grid
-        container
-        justify="center"
-        alignItems="center"
-        direction="column"
-        spacing={1}
-      >
+      <Grid container justify="center" align="center" direction="column" spacing={1}>
         <Grid item>
           <Typography component="h4" variant="h4">
             Create A Room
@@ -70,11 +64,7 @@ export default class CreateRoomPage extends React.Component {
             <FormHelperText>
               <div align="center">Guest control of playback state</div>
             </FormHelperText>
-            <RadioGroup
-              row
-              defaultValue="true"
-              onChange={this.handleGuestCanPauseChange}
-            >
+            <RadioGroup row defaultValue="true" onChange={this.handleGuestCanPauseChange}>
               <FormControlLabel
                 value="true"
                 control={<Radio color="primary" />}
@@ -108,11 +98,7 @@ export default class CreateRoomPage extends React.Component {
           </FormControl>
         </Grid>
         <Grid item>
-          <Button
-            color="primary"
-            variant="contained"
-            onClick={this.handleRoomButtonPressed}
-          >
+          <Button color="primary" variant="contained" onClick={this.handleRoomButtonPressed}>
             Create A Room
           </Button>
         </Grid>
