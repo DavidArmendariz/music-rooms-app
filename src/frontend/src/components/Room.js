@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Grid from '@material-ui/core/Grid';
 export default class Room extends React.Component {
   constructor(props) {
     super(props);
@@ -26,12 +26,12 @@ export default class Room extends React.Component {
   render() {
     const { votesToSkip, guestCanPause, isHost } = this.state;
     return (
-      <div>
+      <Grid container justify="center" align="center" direction="column">
         <h3>Room Code: {this.roomCode}</h3>
         <p>Votes: {votesToSkip}</p>
         <p>Guest Can Pause: {guestCanPause.toString()}</p>
         <p>Is Host: {isHost.toString()}</p>
-      </div>
+      </Grid>
     );
   }
 }
