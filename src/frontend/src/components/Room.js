@@ -1,5 +1,9 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
+
 export default class Room extends React.Component {
   constructor(props) {
     super(props);
@@ -27,10 +31,23 @@ export default class Room extends React.Component {
     const { votesToSkip, guestCanPause, isHost } = this.state;
     return (
       <Grid container justify="center" align="center" direction="column">
-        <h3>Room Code: {this.roomCode}</h3>
-        <p>Votes: {votesToSkip}</p>
-        <p>Guest Can Pause: {guestCanPause.toString()}</p>
-        <p>Is Host: {isHost.toString()}</p>
+        <Grid item>
+          <Typography variant="h4">Room Code: {this.roomCode}</Typography>
+        </Grid>
+        <Grid item>
+          <Typography variant="h6">Votes: {votesToSkip}</Typography>
+        </Grid>
+        <Grid item>
+          <Typography variant="h6">Guest Can Pause: {guestCanPause.toString()}</Typography>
+        </Grid>
+        <Grid item>
+          <Typography variant="h6">Is Host: {isHost.toString()}</Typography>
+        </Grid>
+        <Grid item>
+          <Button color="secondary" variant="contained" to="/" component={Link}>
+            Leave Room
+          </Button>
+        </Grid>
       </Grid>
     );
   }
